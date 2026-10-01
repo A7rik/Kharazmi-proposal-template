@@ -53,9 +53,10 @@
 }
 
 % -------------------- تعاریف ستون‌های جداول (تراز وسط عمودی و افقی) --------------------
+% در زی‌پرشین، raggedright متن را راست‌چین و raggedleft متن را چپ‌چین می‌کند
 \newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
-\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
-\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+\newcolumntype{R}[1]{>{\raggedright\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedleft\arraybackslash}m{#1}}
 
 % -------------------- نمادهای بالت در فهرست‌ها (جلوگیری از کاراکترهای نامعتبر در فونت) --------------------
 \setlist[itemize,1]{label=\raisebox{0.15ex}{\small$\bullet$}}
@@ -145,7 +146,8 @@
     BoldFont=BNaznnBd
 ]{BNaznnBd}
 
-% -------------------- Footnotes (پاورقی انگلیسی LTR با خط نیمه در چپ) --------------------
+% -------------------- Footnotes (پاورقی انگلیسی LTR با خط نیمه در چپ و چسبیده به انتهای صفحه) --------------------
+\FeetAtBottom
 \autofootnoterule
 \renewcommand{\thefootnote}{\arabic{footnote}}
 \newcommand{\پاورقی}[1]{\LTRfootnote{#1}}

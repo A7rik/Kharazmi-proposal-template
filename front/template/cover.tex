@@ -22,13 +22,13 @@
 \renewcommand{\arraystretch}{1.3}
 \setlength{\tabcolsep}{4pt}
 \noindent
-\begin{tabular}{|C{2.4cm}|L{11.4cm}|C{1.6cm}|}
+\begin{tabular}{|C{2.4cm}|m{11.4cm}|C{1.6cm}|}
 \hline
-عنوان فارسی & \multicolumn{2}{R{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\ThesisTitleFa} \tabularnewline
+عنوان فارسی & \multicolumn{2}{m{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\ThesisTitleFa} \tabularnewline
 \hline
-\multicolumn{2}{|L{\dimexpr 2.4cm + 11.4cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\begin{latin}\raggedright\ThesisTitleEn\end{latin}} & \lr{Title} \tabularnewline
+\multicolumn{2}{|m{\dimexpr 2.4cm + 11.4cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\begin{latin}\ThesisTitleEn\end{latin}} & \lr{Title} \tabularnewline
 \hline
-نوع / گرنت & \multicolumn{2}{R{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{%
+نوع / گرنت & \multicolumn{2}{m{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{%
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} lr lr @{}}
 \boxAdadi \ عددی & \boxAzmayeshgahi \ آزمایشگاهی \\
 \boxRouzaneh \ روزانه & \boxPardis \ پردیس \\
@@ -39,20 +39,20 @@
 
 \vspace{0.7em}
 
-% -------------------- Table 2: Student Information (بدون فونت بولد مطابق فرم اصلی) --------------------
+% -------------------- Table 2: Student Information (بدون فونت بولد، کاملاً وسط‌چین در صفحه) --------------------
 \noindent{\normalsize مشخصات دانشجو}\par
 \vspace{0.25em}
 \begingroup
+\centering
 \renewcommand{\arraystretch}{1.6}
 \setlength{\tabcolsep}{3.5pt}
-\noindent\hspace*{0.65cm}%
 \begin{tabular}{|C{3.8cm}|C{2.6cm}|C{4.2cm}|C{1.8cm}|C{2.2cm}|}
 \hline
 نام و نام خانوادگی & شماره دانشجویی & رشته و گرایش تحصیلی & تاریخ & امضا \tabularnewline
 \hline
 \StudentName & \StudentID & \StudentMajor & \ProposalDate & \tabularnewline
 \hline
-\end{tabular}
+\end{tabular}\par
 \endgroup
 
 \vspace{0.7em}
@@ -64,7 +64,7 @@
 \renewcommand{\arraystretch}{1.6}
 \setlength{\tabcolsep}{2.5pt}
 \noindent
-\begin{tabular}{|C{2.0cm}|C{3.0cm}|C{1.8cm}|R{4.5cm}|C{1.8cm}|C{2.05cm}|}
+\begin{tabular}{|C{2.0cm}|C{3.0cm}|C{1.8cm}|m{4.5cm}|C{1.8cm}|C{2.05cm}|}
 \hline
 \multirow{2}{=}{\centering عنوان} & \multirow{2}{=}{\centering نام و نام خانوادگی} & \multicolumn{2}{c|}{ملاحظات} & \multirow{2}{=}{\centering تاریخ} & \multirow{2}{=}{\centering امضا} \tabularnewline
 \cline{3-4}
@@ -78,7 +78,7 @@
 \hline
 استاد ناظر & \RefereeTwoName & \RefereeTwoRank & \RefereeTwoAffiliation & \RefereeTwoDate & \tabularnewline
 \hline
-مدیرگروه & \DepartmentHeadName & \DepartmentHeadRank & \raggedleft تاریخ صورتجلسه: \SessionDate & \DepartmentHeadDate & \tabularnewline
+مدیرگروه & \DepartmentHeadName & \DepartmentHeadRank & تاریخ صورتجلسه: \SessionDate & \DepartmentHeadDate & \tabularnewline
 \hline
 \end{tabular}
 \endgroup
