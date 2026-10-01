@@ -24,13 +24,13 @@
 % -------------------- Page Layout (ابعاد صفحه مطابق قالب رسمی خوارزمی) --------------------
 \geometry{
     a4paper,
-    top=2.0cm,
-    bottom=2.2cm,
+    top=2.5cm,
+    bottom=2.5cm,
     right=2.5cm,
     left=2.2cm,
     headheight=0pt,
     headsep=0pt,
-    footskip=22pt
+    footskip=30pt
 }
 
 % فاصله‌گذاری خطوط و پاراگراف‌ها
@@ -95,6 +95,13 @@
 \usepackage{algorithmicx,algorithm}
 \usepackage[noend]{algpseudocode}
 
+% سازگاری با نسخه‌های مختلف bidi/xepersian روی Overleaf
+% (رفع خطای \UseMathForPositioningText undefined)
+\makeatletter
+\providecommand{\UseMathForPositioningText}{}
+\providecommand{\NormalMathForPositioningText}{}
+\makeatother
+
 \usepackage{xepersian}
 \input{styles/alg-fa}
 
@@ -135,8 +142,10 @@
 ]{BNaznnBd}
 
 % -------------------- تعاریف ستون‌های انگلیسی و ماکروهای کمکی دو زبانه --------------------
-% ستون استاندارد برای متن‌های انگلیسی چپ‌چین در جداول با فونت لاتین و جهت چپ به راست
-\newcolumntype{E}[1]{>{\begin{latin}\setlength{\parskip}{0pt}\raggedright\arraybackslash}m{#1}<{\strut\par\end{latin}}}
+% برای متن انگلیسی چپ‌چین در سلول جدول، از \enbox{width}{text} استفاده کنید
+\newcommand{\enbox}[2]{%
+    \parbox[t]{#1}{\begin{latin}\setlength{\parskip}{0pt}\raggedright #2\strut\end{latin}}%
+}
 
 % -------------------- حذف تیتر خودکار و تکراری «مراجع» از thebibliography --------------------
 \makeatletter
@@ -166,7 +175,19 @@
 \let\origfootnoterule\footnoterule
 \renewcommand{\footnoterule}{\vfill\origfootnoterule}
 % شماره پاورقی‌ها با اعداد فارسی (۱، ۲، ۳ ...)
-\persianfootnote
+% روش سازگار با تمام نسخه‌های xepersian (از جمله Overleaf)
+\makeatletter
+\newcommand{\@toPersianDigit}[1]{%
+  \ifcase#1 ۰\or ۱\or ۲\or ۳\or ۴\or ۵\or ۶\or ۷\or ۸\or ۹\fi
+}
+\newcommand{\@toPersianNumber}[1]{%
+  \expandafter\@@toPersianNumber\number#1\@nil
+}
+\def\@@toPersianNumber#1{%
+  \ifx#1\@nil\else\@toPersianDigit{#1}\expandafter\@@toPersianNumber\fi
+}
+\renewcommand{\thefootnote}{\@toPersianNumber{\c@footnote}}
+\makeatother
 \newcommand{\پاورقی}[1]{\LTRfootnote{#1}}
 \newcommand{\کد}[1]{\lr{\ttfamily #1}}
 \newcommand{\انگلیسی}[1]{\lr{#1}}
