@@ -82,27 +82,6 @@
 \newcommand{\boxRouzaneh}{\ifGrantRouzaneh\checkedbox\else\uncheckedbox\fi}
 \newcommand{\boxPardis}{\ifGrantPardis\checkedbox\else\uncheckedbox\fi}
 
-% -------------------- حذف تیتر خودکار «مراجع» از thebibliography --------------------
-\makeatletter
-\renewenvironment{thebibliography}[1]
-     {\list{\@biblabel{\@arabic\c@enumiv}}%
-           {\settowidth\labelwidth{\@biblabel{#1}}%
-            \leftmargin\labelwidth
-            \advance\leftmargin\labelsep
-            \@openbib@code
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-      \sloppy
-      \clubpenalty4000
-      \@clubpenalty \clubpenalty
-      \widowpenalty4000%
-      \sfcode`\.\@m}
-     {\def\@noitemerr
-       {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}
-\makeatother
-
 % -------------------- Persian & Algorithms --------------------
 \usepackage{algorithmicx,algorithm}
 \usepackage[noend]{algpseudocode}
@@ -146,10 +125,40 @@
     BoldFont=BNaznnBd
 ]{BNaznnBd}
 
-% -------------------- Footnotes (پاورقی انگلیسی LTR با خط نیمه در چپ و چسبیده به انتهای صفحه) --------------------
+% -------------------- تعاریف ستون‌های انگلیسی و ماکروهای کمکی دو زبانه --------------------
+% ستون استاندارد برای متن‌های انگلیسی چپ‌چین در جداول
+\newcolumntype{E}[1]{>{\setlatin\raggedright\arraybackslash}m{#1}}
+
+% -------------------- حذف تیتر خودکار و تکراری «مراجع» از thebibliography --------------------
+\makeatletter
+\AtBeginDocument{%
+  \renewenvironment{thebibliography}[1]
+       {\list{\@biblabel{\@arabic\c@enumiv}}%
+             {\settowidth\labelwidth{\@biblabel{#1}}%
+              \leftmargin\labelwidth
+              \advance\leftmargin\labelsep
+              \@openbib@code
+              \usecounter{enumiv}%
+              \let\p@enumiv\@empty
+              \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+        \sloppy
+        \clubpenalty4000
+        \@clubpenalty \clubpenalty
+        \widowpenalty4000%
+        \sfcode`\.\@m}
+       {\def\@noitemerr
+         {\@latex@warning{Empty `thebibliography' environment}}%
+        \endlist}%
+}
+\makeatother
+
+% -------------------- Footnotes & Bilingual Helpers --------------------
 \autofootnoterule
 \let\origfootnoterule\footnoterule
 \renewcommand{\footnoterule}{\vfill\origfootnoterule}
 \renewcommand{\thefootnote}{\arabic{footnote}}
 \newcommand{\پاورقی}[1]{\LTRfootnote{#1}}
 \newcommand{\کد}[1]{\lr{\ttfamily #1}}
+\newcommand{\انگلیسی}[1]{\lr{#1}}
+\newcommand{\فارسی}[1]{\rl{#1}}
+
