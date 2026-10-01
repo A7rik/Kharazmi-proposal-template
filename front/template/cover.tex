@@ -8,26 +8,27 @@
 % -------------------- Header: Centered (کاملاً وسط‌چین بدون هیچ علامت اضافی) --------------------
 \begin{center}
     \vspace*{-0.8cm}
-    {\normalsize\bfseries\titrfont بسمه تعالی}\\[0.4em]
+    {\normalsize\bfseries بسمه تعالی}\\[0.4em]
     \includegraphics[width=1.8cm,height=2.3cm,keepaspectratio]{front/template/images/logo.png}\\[0.3em]
-    {\Large\bfseries\titrfont \ThesisUniversity}\\[0.2em]
-    {\normalsize\bfseries \ThesisDepartment}\\[1.0em]
-    {\large\bfseries\titrfont \underline{پرسشنامه طرح پایان‌نامه}}
+    {\LARGE\bfseries \ThesisUniversity}\\[0.25em]
+    {\large \ThesisDepartment}\\[1.0em]
+    {\Large\bfseries \underline{پرسشنامه طرح پایان‌نامه}}
 \end{center}
 
 \vspace{0.3em}
 
 % -------------------- Table 1: Titles & Grant (بدون فونت بولد مطابق فایل فرم اصلی) --------------------
 \begingroup
+\renewcommand{\arraystretch}{1.3}
 \setlength{\tabcolsep}{4pt}
 \noindent
-\begin{tabular}{|p{2.4cm}|p{11.4cm}|p{1.6cm}|}
+\begin{tabular}{|C{2.4cm}|L{11.4cm}|C{1.6cm}|}
 \hline
-عنوان فارسی & \multicolumn{2}{p{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\raggedright \ThesisTitleFa} \tabularnewline
+عنوان فارسی & \multicolumn{2}{R{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\ThesisTitleFa} \tabularnewline
 \hline
-\multicolumn{2}{|p{\dimexpr 2.4cm + 11.4cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\begin{latin}\raggedright\ThesisTitleEn\end{latin}} & \centering\lr{Title} \tabularnewline
+\multicolumn{2}{|L{\dimexpr 2.4cm + 11.4cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\begin{latin}\raggedright\ThesisTitleEn\end{latin}} & \lr{Title} \tabularnewline
 \hline
-نوع / گرنت & \multicolumn{2}{p{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{%
+نوع / گرنت & \multicolumn{2}{R{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{%
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} lr lr @{}}
 \boxAdadi \ عددی & \boxAzmayeshgahi \ آزمایشگاهی \\
 \boxRouzaneh \ روزانه & \boxPardis \ پردیس \\
@@ -42,13 +43,14 @@
 \noindent{\normalsize مشخصات دانشجو}\par
 \vspace{0.25em}
 \begingroup
-\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.6}
+\setlength{\tabcolsep}{3.5pt}
 \noindent\hspace*{0.65cm}%
-\begin{tabular}{|p{3.6cm}|p{2.3cm}|p{4.2cm}|p{1.7cm}|p{1.71cm}|}
+\begin{tabular}{|C{3.8cm}|C{2.6cm}|C{4.2cm}|C{1.8cm}|C{2.2cm}|}
 \hline
-\centering نام و نام خانوادگی & \centering شماره دانشجویی & \centering رشته و گرایش تحصیلی & \centering تاریخ & \centering امضا \tabularnewline
+نام و نام خانوادگی & شماره دانشجویی & رشته و گرایش تحصیلی & تاریخ & امضا \tabularnewline
 \hline
-\centering \StudentName & \centering \StudentID & \centering \StudentMajor & \centering \ProposalDate & \rule{0pt}{1.8em}\tabularnewline
+\StudentName & \StudentID & \StudentMajor & \ProposalDate & \tabularnewline
 \hline
 \end{tabular}
 \endgroup
@@ -59,23 +61,24 @@
 \noindent{\normalsize نظر اساتید و گروه آموزشی دانشکده}\par
 \vspace{0.25em}
 \begingroup
-\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.6}
+\setlength{\tabcolsep}{2.5pt}
 \noindent
-\begin{tabular}{|p{2.0cm}|p{2.9cm}|p{1.6cm}|p{4.2cm}|p{1.9cm}|p{2.12cm}|}
+\begin{tabular}{|C{2.0cm}|C{3.0cm}|C{1.8cm}|R{4.5cm}|C{1.8cm}|C{2.05cm}|}
 \hline
-\multirow{2}{*}{\centering عنوان} & \multirow{2}{*}{\centering نام و نام خانوادگی} & \multicolumn{2}{c|}{ملاحظات} & \multirow{2}{*}{\centering تاریخ} & \multirow{2}{*}{\centering امضا} \tabularnewline
+\multirow{2}{=}{\centering عنوان} & \multirow{2}{=}{\centering نام و نام خانوادگی} & \multicolumn{2}{c|}{ملاحظات} & \multirow{2}{=}{\centering تاریخ} & \multirow{2}{=}{\centering امضا} \tabularnewline
 \cline{3-4}
  & & \centering مرتبه علمی & \centering محل اشتغال و اطلاعات تماس & & \tabularnewline
 \hline
-استاد راهنما & \centering \SupervisorOneName & \centering \SupervisorOneRank & \centering \SupervisorOneAffiliation & \centering \SupervisorOneDate & \rule{0pt}{1.8em}\tabularnewline
+استاد راهنما & \SupervisorOneName & \SupervisorOneRank & \SupervisorOneAffiliation & \SupervisorOneDate & \tabularnewline
 \hline
-استاد مشاور & \centering \AdvisorName & \centering \AdvisorRank & \centering \AdvisorAffiliation & \centering \AdvisorDate & \rule{0pt}{1.8em}\tabularnewline
+استاد مشاور & \AdvisorName & \AdvisorRank & \AdvisorAffiliation & \AdvisorDate & \tabularnewline
 \hline
-استاد ناظر & \centering \RefereeOneName & \centering \RefereeOneRank & \centering \RefereeOneAffiliation & \centering \RefereeOneDate & \rule{0pt}{1.8em}\tabularnewline
+استاد ناظر & \RefereeOneName & \RefereeOneRank & \RefereeOneAffiliation & \RefereeOneDate & \tabularnewline
 \hline
-استاد ناظر & \centering \RefereeTwoName & \centering \RefereeTwoRank & \centering \RefereeTwoAffiliation & \centering \RefereeTwoDate & \rule{0pt}{1.8em}\tabularnewline
+استاد ناظر & \RefereeTwoName & \RefereeTwoRank & \RefereeTwoAffiliation & \RefereeTwoDate & \tabularnewline
 \hline
-مدیرگروه & \centering \DepartmentHeadName & \centering \DepartmentHeadRank & \raggedright تاریخ صورتجلسه: \SessionDate & \centering \DepartmentHeadDate & \rule{0pt}{1.8em}\tabularnewline
+مدیرگروه & \DepartmentHeadName & \DepartmentHeadRank & \raggedleft تاریخ صورتجلسه: \SessionDate & \DepartmentHeadDate & \tabularnewline
 \hline
 \end{tabular}
 \endgroup

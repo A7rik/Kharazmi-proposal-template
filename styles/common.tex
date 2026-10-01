@@ -52,11 +52,23 @@
     \fancyfoot[L]{\thepage}
 }
 
+% -------------------- تعاریف ستون‌های جداول (تراز وسط عمودی و افقی) --------------------
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+
+% -------------------- نمادهای بالت در فهرست‌ها (جلوگیری از کاراکترهای نامعتبر در فونت) --------------------
+\setlist[itemize,1]{label=\raisebox{0.15ex}{\small$\bullet$}}
+\setlist[itemize,2]{label=\raisebox{0.15ex}{\footnotesize$\circ$}}
+\setlist[itemize,3]{label=\raisebox{0.15ex}{\tiny$\bullet$}}
+\renewcommand{\labelitemi}{\raisebox{0.15ex}{\small$\bullet$}}
+\renewcommand{\labelitemii}{\raisebox{0.15ex}{\footnotesize$\circ$}}
+
 % -------------------- تیترهای بخش‌ها (Kharazmi Headings) --------------------
 % تیترها دقیقاً سایز ۱۲ بولد با خط زیرِ خود متن، بدون شماره و تراز راست
 \newcommand{\khusection}[1]{%
     \par\vspace{1.5em}%
-    \noindent{\normalsize\bfseries\titrfont\underline{#1}}%
+    \noindent{\normalsize\bfseries\underline{#1}}%
     \par\vspace{0.6em}%
 }
 
@@ -69,6 +81,27 @@
 \newcommand{\boxRouzaneh}{\ifGrantRouzaneh\checkedbox\else\uncheckedbox\fi}
 \newcommand{\boxPardis}{\ifGrantPardis\checkedbox\else\uncheckedbox\fi}
 
+% -------------------- حذف تیتر خودکار «مراجع» از thebibliography --------------------
+\makeatletter
+\renewenvironment{thebibliography}[1]
+     {\list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty4000
+      \@clubpenalty \clubpenalty
+      \widowpenalty4000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+\makeatother
+
 % -------------------- Persian & Algorithms --------------------
 \usepackage{algorithmicx,algorithm}
 \usepackage[noend]{algpseudocode}
@@ -78,7 +111,7 @@
 
 % -------------------- Fonts --------------------
 \settextfont[
-    Scale=1.1,
+    Scale=1.0,
     Extension=.ttf, 
     Path=styles/fonts/,
     BoldFont=BNaznnBd,
@@ -89,7 +122,7 @@
 
 \setlatintextfont[
     Scale=1.0,
-    Extension=.ttf,
+    Extension=.ttf, 
     Path=styles/fonts/,
     BoldFont=timesbd,
     ItalicFont=timesi,
@@ -97,7 +130,7 @@
 ]{times}
 
 \setmathdigitfont[
-    Scale=1.09,
+    Scale=1.0,
     Extension=.ttf, 
     Path=styles/fonts/,
     BoldFont=XB Yas Bd,
@@ -106,7 +139,7 @@
 ]{XB Yas}
 
 \defpersianfont\titrfont[
-    Scale=1.05,
+    Scale=1.0,
     Path=styles/fonts/,
     Extension=.ttf,
     BoldFont=BNaznnBd
