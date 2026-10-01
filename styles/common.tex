@@ -25,12 +25,12 @@
 \geometry{
     a4paper,
     top=2.0cm,
-    bottom=2.5cm,
+    bottom=2.2cm,
     right=2.5cm,
     left=2.2cm,
     headheight=0pt,
     headsep=0pt,
-    footskip=35pt
+    footskip=22pt
 }
 
 % فاصله‌گذاری خطوط و پاراگراف‌ها
@@ -147,8 +147,9 @@
 ]{BNaznnBd}
 
 % -------------------- Footnotes (پاورقی انگلیسی LTR با خط نیمه در چپ و چسبیده به انتهای صفحه) --------------------
-\FeetAtBottom
 \autofootnoterule
+\let\origfootnoterule\footnoterule
+\renewcommand{\footnoterule}{\vfill\origfootnoterule}
 \renewcommand{\thefootnote}{\arabic{footnote}}
 \newcommand{\پاورقی}[1]{\LTRfootnote{#1}}
 \newcommand{\کد}[1]{\lr{\ttfamily #1}}
