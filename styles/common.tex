@@ -127,7 +127,7 @@
 
 % -------------------- تعاریف ستون‌های انگلیسی و ماکروهای کمکی دو زبانه --------------------
 % ستون استاندارد برای متن‌های انگلیسی چپ‌چین در جداول با فونت لاتین و جهت چپ به راست
-\newcolumntype{E}[1]{>{\begin{latin}\setlength{\parskip}{0pt}\raggedright\arraybackslash}m{#1}<{\end{latin}}}
+\newcolumntype{E}[1]{>{\begin{latin}\setlength{\parskip}{0pt}\raggedright\arraybackslash}m{#1}<{\strut\par\end{latin}}}
 
 % -------------------- حذف تیتر خودکار و تکراری «مراجع» از thebibliography --------------------
 \makeatletter
