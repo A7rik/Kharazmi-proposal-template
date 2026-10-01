@@ -1,0 +1,83 @@
+% --------------------------------------------------------------------------
+%  Kharazmi University Proposal - Cover Page & Administrative Tables
+%  صفحه اول و جداول اداری پروپوزال دانشگاه خوارزمی
+% --------------------------------------------------------------------------
+
+\thispagestyle{plain}
+
+% -------------------- Header: Centered (کاملاً وسط‌چین بدون هیچ علامت اضافی) --------------------
+\begin{center}
+    \vspace*{-0.8cm}
+    {\normalsize\bfseries\titrfont بسمه تعالی}\\[0.4em]
+    \includegraphics[width=1.8cm,height=2.3cm,keepaspectratio]{front/template/images/logo.png}\\[0.3em]
+    {\Large\bfseries\titrfont \ThesisUniversity}\\[0.2em]
+    {\normalsize\bfseries \ThesisDepartment}\\[1.0em]
+    {\large\bfseries\titrfont \underline{پرسشنامه طرح پایان‌نامه}}
+\end{center}
+
+\vspace{0.3em}
+
+% -------------------- Table 1: Titles & Grant (عرض کامل ۱۶.۳ سانتی‌متر) --------------------
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\noindent
+\begin{tabular}{|p{2.4cm}|p{11.4cm}|p{1.6cm}|}
+\hline
+\bfseries عنوان فارسی & \multicolumn{2}{p{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\raggedright \ThesisTitleFa} \tabularnewline
+\hline
+\multicolumn{2}{|p{\dimexpr 2.4cm + 11.4cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\begin{latin}\raggedright\ThesisTitleEn\end{latin}} & \centering\bfseries\lr{Title} \tabularnewline
+\hline
+\bfseries نوع / گرنت & \multicolumn{2}{p{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{%
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} lr lr @{}}
+\boxAdadi \ عددی & \boxAzmayeshgahi \ آزمایشگاهی \\
+\boxRouzaneh \ روزانه & \boxPardis \ پردیس \\
+\end{tabular*}} \tabularnewline
+\hline
+\end{tabular}
+\endgroup
+
+\vspace{0.7em}
+
+% -------------------- Table 2: Student Information (عرض ۱۵.۰ سانتی‌متر و کوچکتر از جداول ۱ و ۳) --------------------
+\noindent{\normalsize\bfseries\titrfont مشخصات دانشجو}\par
+\vspace{0.25em}
+\begingroup
+\setlength{\tabcolsep}{4pt}
+\noindent\hspace*{0.65cm}%
+\begin{tabular}{|p{3.6cm}|p{2.3cm}|p{4.2cm}|p{1.7cm}|p{1.71cm}|}
+\hline
+\centering\bfseries نام و نام خانوادگی & \centering\bfseries شماره دانشجویی & \centering\bfseries رشته و گرایش تحصیلی & \centering\bfseries تاریخ & \centering\bfseries امضا \tabularnewline
+\hline
+\centering \StudentName & \centering \StudentID & \centering \StudentMajor & \centering \ProposalDate & \rule{0pt}{1.8em}\tabularnewline
+\hline
+\end{tabular}
+\endgroup
+
+\vspace{0.7em}
+
+% -------------------- Table 3: Faculty & Supervisors (عرض کامل ۱۶.۳ سانتی‌متر مانند جدول اول) --------------------
+\noindent{\normalsize\bfseries\titrfont نظر اساتید و گروه آموزشی دانشکده}\par
+\vspace{0.25em}
+\begingroup
+\setlength{\tabcolsep}{3.5pt}
+\noindent
+\begin{tabular}{|p{2.0cm}|p{2.9cm}|p{1.6cm}|p{4.2cm}|p{1.9cm}|p{2.12cm}|}
+\hline
+\multirow{2}{*}{\centering\bfseries عنوان} & \multirow{2}{*}{\centering\bfseries نام و نام خانوادگی} & \multicolumn{2}{c|}{\bfseries ملاحظات} & \multirow{2}{*}{\centering\bfseries تاریخ} & \multirow{2}{*}{\centering\bfseries امضا} \tabularnewline
+\cline{3-4}
+ & & \centering\bfseries مرتبه علمی & \centering\bfseries محل اشتغال و اطلاعات تماس & & \tabularnewline
+\hline
+استاد راهنما & \centering \SupervisorOneName & \centering \SupervisorOneRank & \centering \SupervisorOneAffiliation & \centering \SupervisorOneDate & \rule{0pt}{1.8em}\tabularnewline
+\hline
+استاد مشاور & \centering \AdvisorName & \centering \AdvisorRank & \centering \AdvisorAffiliation & \centering \AdvisorDate & \rule{0pt}{1.8em}\tabularnewline
+\hline
+استاد ناظر & \centering \RefereeOneName & \centering \RefereeOneRank & \centering \RefereeOneAffiliation & \centering \RefereeOneDate & \rule{0pt}{1.8em}\tabularnewline
+\hline
+استاد ناظر & \centering \RefereeTwoName & \centering \RefereeTwoRank & \centering \RefereeTwoAffiliation & \centering \RefereeTwoDate & \rule{0pt}{1.8em}\tabularnewline
+\hline
+مدیرگروه & \centering \DepartmentHeadName & \centering \DepartmentHeadRank & \raggedright\textbf{تاریخ صورتجلسه:} \SessionDate & \centering \DepartmentHeadDate & \rule{0pt}{1.8em}\tabularnewline
+\hline
+\end{tabular}
+\endgroup
+
+\newpage
