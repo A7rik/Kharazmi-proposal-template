@@ -29,9 +29,10 @@
 عنوان فارسی & \multicolumn{2}{m{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{\ThesisTitleFa} \tabularnewline
 \hline
 \multicolumn{2}{|m{\dimexpr 2.4cm + 11.4cm + 2\tabcolsep + \arrayrulewidth\relax}|}{%
-    \begin{latin}\setlength{\parskip}{0pt}%
-    \raggedright\ThesisTitleEn\strut\par%
-    \end{latin}%
+    \parbox[t]{\dimexpr 2.4cm + 11.4cm + 2\tabcolsep + \arrayrulewidth - 2\tabcolsep\relax}{%
+        \begin{latin}\setlength{\parskip}{0pt}%
+        \raggedright\ThesisTitleEn\strut\par%
+        \end{latin}}%
 } & \lr{Title} \tabularnewline
 \hline
 نوع / گرنت & \multicolumn{2}{m{\dimexpr 11.4cm + 1.6cm + 2\tabcolsep + \arrayrulewidth\relax}|}{%

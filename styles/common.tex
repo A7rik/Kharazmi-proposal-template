@@ -38,6 +38,15 @@
 \setlength{\parskip}{0.35em}
 \setlength{\parindent}{0.8cm} % فرورفتگی ابتدای پاراگراف‌ها
 
+% -------------------- Robustness Settings (تنظیمات مقاوم‌سازی قالب) --------------------
+% جلوگیری از خروج متن از حاشیه و شکستن صفحه‌بندی هنگام ویرایش
+\sloppy                         % اجازه فاصله‌گذاری انعطاف‌پذیر بین کلمات
+\tolerance=2000                 % آستانه بالاتر برای شکست خطوط
+\emergencystretch=1.5em         % فضای اضطراری برای شکست خطوط بلند
+\hbadness=10000                 % جلوگیری از هشدارهای underfull hbox
+\vbadness=10000                 % جلوگیری از هشدارهای underfull vbox
+\hfuzz=2pt                      % تحمل سرریز افقی تا ۲ نقطه بدون خطا
+
 % -------------------- Headers & Footers (بدون سربرگ، شماره صفحه پایین-چپ) --------------------
 \pagestyle{fancy}
 \fancyhf{}
@@ -156,9 +165,15 @@
 \autofootnoterule
 \let\origfootnoterule\footnoterule
 \renewcommand{\footnoterule}{\vfill\origfootnoterule}
-\renewcommand{\thefootnote}{\arabic{footnote}}
+% شماره پاورقی‌ها با اعداد فارسی (۱، ۲، ۳ ...)
+\persianfootnote
 \newcommand{\پاورقی}[1]{\LTRfootnote{#1}}
 \newcommand{\کد}[1]{\lr{\ttfamily #1}}
 \newcommand{\انگلیسی}[1]{\lr{#1}}
 \newcommand{\فارسی}[1]{\rl{#1}}
 
+% -------------------- میانبرها (Shortcut Aliases) --------------------
+% برای راحتی ویرایش، می‌توانید از دستورات کوتاه زیر نیز استفاده کنید:
+\newcommand{\en}[1]{\lr{#1}}           % متن انگلیسی: \en{English text}
+\newcommand{\fa}[1]{\rl{#1}}           % متن فارسی (در بلوک لاتین): \fa{متن فارسی}
+\newcommand{\fnote}[1]{\LTRfootnote{#1}} % پاورقی انگلیسی: \fnote{English footnote}
