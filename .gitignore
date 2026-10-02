@@ -222,8 +222,9 @@ TSWLatexianTemp*
 
 Thumbs.db
 
-## OS & Python cache:
+## OS, Office & Python cache:
 .DS_Store
+~$*
 __pycache__/
 *.py[cod]
 *_page_*.png
