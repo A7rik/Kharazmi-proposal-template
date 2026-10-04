@@ -105,6 +105,11 @@
 \usepackage{xepersian}
 \input{styles/alg-fa}
 
+% رفع مشکل نمایش نشدن خط تیره‌ی «–» (en dash) و «—» (em dash) در فونت فارسی:
+% این نویسه‌ها در فونت بی‌نازنین وجود ندارند، پس با فونت لاتین چاپ می‌شوند.
+\catcode`\–=\active \protected\def–{\lr{\textendash}}
+\catcode`\—=\active \protected\def—{\lr{\textemdash}}
+
 % -------------------- Fonts --------------------
 \settextfont[
     Scale=1.0,
